@@ -1,0 +1,9 @@
+    tasks:
+      - name: Make a virtual environment
+        command: python3 -m venv .venv
+      - name: Activate virtual environment
+        command: source .venv/bin/activate     
+      - name: Install Jupyter and dependencies
+        init: pip install -r requirements.txt
+      - name: Start Jupyter Notebook
+        command: jupyter notebook --no-browser --NotebookApp.allow_origin='*' --NotebookApp.allow_remote_access=True --NotebookApp.token='' --NotebookApp.password='' --port=8888
